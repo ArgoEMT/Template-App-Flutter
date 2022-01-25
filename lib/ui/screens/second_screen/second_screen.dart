@@ -30,7 +30,7 @@ class SecondScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(arguments.stringToDisplay),
-            OutlinedButton(
+            ElevatedButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
