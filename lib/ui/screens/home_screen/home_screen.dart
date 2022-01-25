@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
                 controller: _controller,
               ),
             ),
-            OutlinedButton(
+            ElevatedButton(
               onPressed: () {
                 Navigator.of(context).pushNamed(
                   RoutePaths.secondScreen,
