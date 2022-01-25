@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
+
+  /// Simple theme generated with https://rxlabz.github.io/panache_web/#/
   static final lightTheme = ThemeData(
     primarySwatch: const MaterialColor(4287979687, {
       50: Color(0xfff4eff6),
