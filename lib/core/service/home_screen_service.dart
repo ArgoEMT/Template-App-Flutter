@@ -1,4 +1,4 @@
-import 'package:flutter_template/core/api/home_screen_api.dart';
+import '../api/home_screen_api.dart';
 
 /// Service of the HomeScreen.
 ///
