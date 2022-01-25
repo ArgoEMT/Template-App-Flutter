@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/core/view_models/screen/home_screen_view_model.dart';
-import 'package:flutter_template/ui/components/base_widget.dart';
-import 'package:flutter_template/ui/screens/home_screen/components/home_screen_body.dart';
+import '../../../core/view_models/screen/home_screen_view_model.dart';
+import '../../components/base_widget.dart';
+import 'components/home_screen_body.dart';
 import 'package:provider/provider.dart';
 
 /// App's homescreen.
@@ -10,6 +10,7 @@ import 'package:provider/provider.dart';
 /// - Arguments passing using the navigator.
 /// - Viewmodel usage.
 /// - Provider usage.
+/// - Stream usage.
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
