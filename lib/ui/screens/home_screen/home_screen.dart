@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/core/view_models/screen/home_screen_view_model.dart';
 import 'package:flutter_template/ui/components/base_widget.dart';
+import 'package:provider/provider.dart';
 import '../../../core/constants/route_paths.dart';
 import '../second_screen/second_screen.dart';
 
@@ -9,6 +10,7 @@ import '../second_screen/second_screen.dart';
 /// You'll find an examples of :
 /// - Arguments passing using the navigator.
 /// - Viewmodel usage.
+/// - Provider usage.
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
 
@@ -16,7 +18,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseWidget<HomeScreenViewModel>(
-      model: HomeScreenViewModel(),
+      model: HomeScreenViewModel(
+        homeScreenService: Provider.of(context),
+      ),
       onModelReady: (model) {
         model.init();
       },
