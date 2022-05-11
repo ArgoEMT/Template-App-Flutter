@@ -8,14 +8,14 @@ class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case RoutePaths.home:
-        return MaterialPageRoute(
-          builder: (_) => const HomeScreen(),
+        return _routeBuilder(
+          target: const HomeScreen(),
           settings: settings,
         );
 
       case RoutePaths.secondScreen:
-        return MaterialPageRoute(
-          builder: (_) => SecondScreen(
+        return _routeBuilder(
+          target: SecondScreen(
               arguments: settings.arguments as SecondScreenArguments),
           settings: settings,
         );
@@ -30,4 +30,33 @@ class AppRouter {
         );
     }
   }
+
+  static MaterialPageRoute _routeBuilder({
+    required Widget target,
+    RouteSettings? settings,
+    bool maintainState = true,
+  }) {
+    return CustomPageRoute(
+      builder: (context) {
+        return target;
+      },
+      settings: settings,
+      maintainState: maintainState,
+    );
+  }
+}
+
+class CustomPageRoute extends MaterialPageRoute {
+  @override
+  Duration get transitionDuration => const Duration(milliseconds: 0);
+
+  CustomPageRoute({
+    required Widget Function(BuildContext) builder,
+    RouteSettings? settings,
+    bool maintainState = true,
+  }) : super(
+          builder: builder,
+          settings: settings,
+          maintainState: maintainState,
+        );
 }

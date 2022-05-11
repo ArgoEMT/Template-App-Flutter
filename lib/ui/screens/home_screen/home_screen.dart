@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_template/ui/shared/main_responsive_template.dart';
 import '../../../core/view_models/screen/home_screen_view_model.dart';
 import '../../components/base_widget.dart';
 import 'components/home_screen_body.dart';
@@ -24,11 +25,8 @@ class HomeScreen extends StatelessWidget {
         model.init();
       },
       builder: (context, model, child) {
-        return Scaffold(
-          appBar: AppBar(
-            title: const Text('Home screen'),
-          ),
-          body: HomeScreenBody(model: model),
+        return MainResponsiveTemplate(
+          child: HomeScreenBody(model: model),
         );
       },
     );

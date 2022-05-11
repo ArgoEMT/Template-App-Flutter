@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_template/ui/shared/main_responsive_template.dart';
 
 /// Arguments of the second screen.
 class SecondScreenArguments {
@@ -21,11 +22,8 @@ class SecondScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second screen'),
-      ),
-      body: Center(
+    return MainResponsiveTemplate(
+      child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

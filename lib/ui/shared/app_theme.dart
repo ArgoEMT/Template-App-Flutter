@@ -18,7 +18,6 @@ class AppTheme {
     }),
     brightness: Brightness.light,
     primaryColor: const Color(0xff9560a7),
-    primaryColorBrightness: Brightness.light,
     primaryColorLight: const Color(0xffe9deed),
     primaryColorDark: const Color(0xff7e4b89),
     canvasColor: const Color(0xfff4eef9),
@@ -60,9 +59,7 @@ class AppTheme {
       hoverColor: Color(0x0a000000),
       colorScheme: ColorScheme(
         primary: Color(0xff9560a7),
-        primaryVariant: Color(0xff573762),
         secondary: Color(0xff925ba4),
-        secondaryVariant: Color(0xff573762),
         surface: Color(0xffffffff),
         background: Color(0xffd3bddb),
         error: Color(0xffd32f2f),
