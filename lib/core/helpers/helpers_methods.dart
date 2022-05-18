@@ -154,3 +154,26 @@ Future showCustomDatePicker({
     onChange(date);
   }
 }
+
+// string extention
+
+extension StringExtension on String {
+  String capitalize(String s) {
+    if (s.isEmpty) {
+      return s;
+    }
+    return s[0].toUpperCase() + s.substring(1);
+  }
+}
+
+extension ListExtension<T> on List<T> {
+  bool containsAny(List<T> other)
+  {
+    for (var i = 0; i < other.length; i++) {
+      if (contains(other[i])) {
+        return true;
+      }
+    }
+    return false;
+  }
+}

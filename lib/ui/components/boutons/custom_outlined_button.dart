@@ -8,6 +8,7 @@ class CustomOutlinedButton extends StatelessWidget {
     this.horizontalPadding,
     this.style,
     this.backGroundColor,
+    this.hasSplash = true,
   }) : super(key: key);
 
   final double? horizontalPadding;
@@ -16,12 +17,21 @@ class CustomOutlinedButton extends StatelessWidget {
   final ButtonStyle? style;
   final Color? backGroundColor;
 
+  /// Renseigne si on veut un splash.
+  final bool hasSplash;
+
   @override
   Widget build(BuildContext context) {
     ButtonStyle _style;
     if (style != null) {
       _style = style!.copyWith(
-          padding: MaterialStateProperty.all(const EdgeInsets.all(0)));
+          padding: MaterialStateProperty.all(const EdgeInsets.all(0)),
+          overlayColor: !hasSplash
+              ? MaterialStateProperty.resolveWith<Color>(
+                  (Set<MaterialState> states) {
+                  return Colors.transparent; // Defer to the widget's default.
+                })
+              : null);
     } else {
       _style = OutlinedButton.styleFrom(
           padding: const EdgeInsets.all(0), backgroundColor: backGroundColor);
